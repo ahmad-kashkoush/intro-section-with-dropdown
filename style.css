@@ -1,0 +1,128 @@
+:root {
+  --Almost-White: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Almost-Black: hsl(0, 0%, 8%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* !Start Components */
+/* todo container widths */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  padding: 7px 15px;
+  border: 2px solid var(--Medium-Gray);
+  border-radius: 10px;
+  color: var(--Medium-Gray);
+}
+/* ?Start Components */
+/* !Start General Rules */
+li {
+  list-style: none;
+}
+a {
+  align-items: start;
+  text-decoration: none;
+  color: var(--Almost-Black);
+}
+p {
+  font-size: 18px;
+}
+/* ?Start General Rules */
+
+body {
+  background-color: var(--Almost-White);
+}
+/* !start Navbar */
+header {
+}
+nav {
+  padding: 10px 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+nav .logo {
+  width: 60px;
+  margin-top: 10px;
+}
+nav .logo img {
+  width: 100%;
+}
+nav .nav-links {
+  flex: 1;
+  display: flex;
+
+  gap: 15px;
+}
+nav .nav-links > li {
+}
+nav .nav-links > li > a {
+}
+/* todo dropdown Menu */
+/* todo dropdown before and after for arrows icons */
+nav .dropdown {
+  display: none;
+}
+nav .dropdown li {
+}
+nav .dropdown li a {
+}
+nav .dropdown li a img {
+}
+nav .account-stuff {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav .account-stuff .btn-login {
+  border: none;
+}
+/* ?End Navbar ************************************************/
+main {
+  display: flex;
+}
+main .hero {
+}
+main .hero h1 {
+  color: var(--Almost-Black);
+  font-size: 48px;
+}
+main .hero p {
+  margin-top: 2rem;
+  color: var(--Almost-Black);
+}
+main .hero .btn-learn-more {
+  color: var(--Almost-White);
+  background: var(--Almost-Black);
+  border: none;
+  display: block;
+  width: fit-content;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  padding: 9px 15px;
+  margin-top: 2rem;
+}
+main .hero .clients {
+  display: flex;
+  align-items: center;
+  margin-top: 9rem;
+  gap: 2rem;
+}
+main .hero .clients img {
+}
+
+main .img-wrapper {
+  background-image: url("images/image-hero-desktop.png");
+  flex-basis: 50%;
+  background-size: cover;
+  background-position: center;
+}
