@@ -2,6 +2,17 @@
   --Almost-White: hsl(0, 0%, 98%);
   --Medium-Gray: hsl(0, 0%, 41%);
   --Almost-Black: hsl(0, 0%, 8%);
+  --font-family: "Epilogue", sans-serif;
+  /* For Hamburger Menu */
+  --bar-width: 30px;
+  --bar-height: 3px;
+  --bar-gap: 6px;
+  --foreground: #333;
+  --background: white;
+  --hamburger-margin: 5px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--bar-gap) * 2);
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
 }
 * {
   margin: 0;
@@ -22,7 +33,65 @@
   border-radius: 10px;
   color: var(--Medium-Gray);
 }
-/* ?Start Components */
+/* !!!!! hamburger Menu */
+.hamburger-menu {
+  /* Styling */
+  display: flex;
+  flex-direction: column;
+  gap: var(--bar-gap);
+  width: max-content;
+
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), background-color var(--animation-timing),
+    translate var(--animation-timing);
+  transform-origin: left center;
+}
+.hamburger-menu input {
+  appearance: none;
+  outline: none;
+  pointer-events: none;
+}
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+@media (min-width: 727px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0 0 0 / 0.3);
+  z-index: 1;
+}
 /* !Start General Rules */
 li {
   list-style: none;
