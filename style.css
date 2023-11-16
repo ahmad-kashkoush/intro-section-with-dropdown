@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
 :root {
   --Almost-White: hsl(0, 0%, 98%);
   --Medium-Gray: hsl(0, 0%, 41%);
@@ -50,6 +51,13 @@
   border: 2px solid var(--Medium-Gray);
   border-radius: 10px;
   color: var(--Medium-Gray);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out,
+    border-color 300ms ease-in-out;
+}
+.btn:hover {
+  background-color: var(--Almost-Black);
+  color: var(--Almost-White);
+  border-color: transparent;
 }
 /* !!!!! hamburger Menu */
 .hamburger-menu {
